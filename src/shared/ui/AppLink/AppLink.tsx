@@ -11,12 +11,14 @@ export enum AppLinkTheme {
 interface AppLinkProps extends LinkProps {
   className?: string;
   theme?: AppLinkTheme;
+  title: string;
 }
 
 export const AppLink: FC<AppLinkProps> = ({
   className,
   children,
   to,
+  title,
   theme = AppLinkTheme.PRIMARY,
   ...props
 }) => {
@@ -26,7 +28,7 @@ export const AppLink: FC<AppLinkProps> = ({
       className={classNames(cls.appLink, {}, [className, cls[theme]])}
       {...props}
     >
-      {children}
+      {title}
     </Link>
   );
 };
