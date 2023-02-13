@@ -1,16 +1,14 @@
-declare module "*.scss" {
-  interface IClassNames {
-    [className: string]: string;
-  }
+declare module '*.scss' {
+  type IClassNames = Record<string, string>;
   const classNames: IClassNames;
   export = classNames;
 }
 
-declare module "*.svg" {
+declare module '*.svg' {
   const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
   export default content;
 }
 
-declare module "*.png";
+declare module '*.png';
 
-declare const __IS_DEV__: boolean;
+declare const IS_DEV: boolean;

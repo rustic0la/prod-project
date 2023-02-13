@@ -1,9 +1,5 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-export const MainPageLazy = lazy(
-  () =>
-    new Promise((resolve) => {
-      //@ts-ignore
-      setTimeout(() => resolve(import("./index")), 1500);
-    })
-);
+const MainPageLazy = lazy(() => import('./index'));
+
+export default MainPageLazy;
