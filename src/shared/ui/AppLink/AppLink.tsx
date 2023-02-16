@@ -28,5 +28,5 @@ export const AppLink: FC<AppLinkProps> = ({
     {...props}
   >
     {title}
-  </Link>
+  </Link>w
 );
