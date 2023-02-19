@@ -47,6 +47,8 @@
     ],
     "operator-linebreak": "off",
     "object-curly-newline": "off",
-    "i18next/no-literal-string": ["error", { "markupOnly": true }]
+    "i18next/no-literal-string": ["error", { "markupOnly": true }],
+    "implicit-arrow-linebreak": "off",
+    "react/jsx-wrap-multilines": "off"
   }
 }
