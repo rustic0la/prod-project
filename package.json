@@ -9,10 +9,11 @@
     "build:dev": "webpack --env mode=development ",
     "test": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
+    "test:ui:ci": "npx loki test --requireReference --reactUri file:./storybook-static",
     "lint": "eslint --ext .ts,.tsx src --fix",
     "lint:css": "npx stylelint \"**/*.scss\"",
     "storybook": "start-storybook -p 6006 -c './config/storybook'",
-    "build-storybook": "build-storybook -c './config/storybook'"
+    "storybook:build": "build-storybook -c './config/storybook'"
   },
   "prettier": {
     "singleQuote": true,
