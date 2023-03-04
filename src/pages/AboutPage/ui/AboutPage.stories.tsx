@@ -14,6 +14,8 @@ export default {
 } as ComponentMeta<typeof AboutPage>;
 
 const Template: ComponentStory<typeof AboutPage> = (args) => (
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   <AboutPage {...args} />
 );
 
