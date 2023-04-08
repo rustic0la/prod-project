@@ -22,7 +22,13 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier", "i18next"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "i18next",
+    "react-hooks"
+  ],
   "rules": {
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/comma-dangle": "off",
@@ -50,6 +56,8 @@
     "i18next/no-literal-string": ["error", { "markupOnly": true }],
     "implicit-arrow-linebreak": "off",
     "react/jsx-wrap-multilines": "off",
-    "@typescript-eslint/indent": "off"
+    "@typescript-eslint/indent": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   }
 }
