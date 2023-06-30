@@ -7,9 +7,9 @@ import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { ButtonSize } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher';
-import cls from './Sidebar.module.scss';
 import AboutSvg from 'shared/assets/icons/about.svg';
 import MainSvg from 'shared/assets/icons/main.svg';
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;
