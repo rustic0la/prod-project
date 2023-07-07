@@ -12,6 +12,11 @@ export default {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   moduleDirectories: ['node_modules'],
   modulePaths: ['<rootDir>src'],
+  preset: 'ts-jest',
+  transform: {
+    '^.+\\.(ts|tsx)?$': 'ts-jest',
+    '^.+\\.(js|jsx)$': 'babel-jest',
+  },
   testMatch: [
     // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
@@ -21,7 +26,7 @@ export default {
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-    "axios": "axios/dist/node/axios.cjs",
+    axios: 'axios/dist/node/axios.cjs',
   },
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
