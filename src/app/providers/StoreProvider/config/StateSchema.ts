@@ -1,3 +1,4 @@
+import { ProfileSchema } from 'entities/Profile';
 import {
   AnyAction,
   EnhancedStore,
@@ -12,6 +13,7 @@ export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   loginForm?: LoginSchema;
+  profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

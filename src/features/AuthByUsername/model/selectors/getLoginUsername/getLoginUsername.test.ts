@@ -9,11 +9,11 @@ describe('selectLoginUsername test', () => {
         username: 'admin',
       },
     };
-    expect(selectLoginUsername(state)).toEqual('admin');
+    expect(selectLoginUsername(state as StateSchema)).toEqual('admin');
   });
 
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
-    expect(selectLoginUsername(state)).toEqual('');
+    expect(selectLoginUsername(state as StateSchema)).toEqual('');
   });
 });

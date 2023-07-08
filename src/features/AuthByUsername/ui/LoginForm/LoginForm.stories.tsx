@@ -12,7 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm />;
+const Template: ComponentStory<typeof LoginForm> = () => <LoginForm />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

@@ -2,19 +2,21 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from '../../../../config/storybook/ThemeDecorator/ThemeDecorator';
-import { Sidebar } from './Sidebar';
+import ProfilePage from './ProfilePage';
 import 'app/styles/index.scss';
 
 export default {
-  title: 'widgets/Sidebar',
-  component: Sidebar,
+  title: 'pages/ProfilePage',
+  component: ProfilePage,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Sidebar>;
+} as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => (
-  <Sidebar {...args} />
+const Template: ComponentStory<typeof ProfilePage> = (args) => (
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  <ProfilePage {...args} />
 );
 
 export const Light = Template.bind({});

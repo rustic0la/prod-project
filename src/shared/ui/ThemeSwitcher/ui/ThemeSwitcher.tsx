@@ -1,5 +1,5 @@
 import { useTheme, Theme } from 'app/providers/ThemeProvider';
-import React, { type FC } from 'react';
+import React, { memo, type FC } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
@@ -9,7 +9,7 @@ import { ButtonTheme } from '../..';
 interface ThemeSwitcherProps {
   className?: string;
 }
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
+export const ThemeSwitcher: FC = memo(({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -21,4 +21,4 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
       {theme === Theme.LIGHT ? <LightIcon /> : <DarkIcon />}
     </Button>
   );
-};
+});

@@ -13,7 +13,7 @@ interface InputProps extends HTMLInputProps {
 }
 
 export const Input: FC<InputProps> = memo(
-  ({ value, onChange, type = 'text', ...props }) => {
+  ({ value, onChange, type = 'text', ...props }: InputProps) => {
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(e.target.value);
     };

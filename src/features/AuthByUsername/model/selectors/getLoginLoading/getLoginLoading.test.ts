@@ -9,11 +9,11 @@ describe('selectLoginLoading test', () => {
         isLoading: true,
       },
     };
-    expect(selectLoginLoading(state)).toEqual(true);
+    expect(selectLoginLoading(state as StateSchema)).toEqual(true);
   });
 
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
-    expect(selectLoginLoading(state)).toEqual(false);
+    expect(selectLoginLoading(state as StateSchema)).toEqual(false);
   });
 });

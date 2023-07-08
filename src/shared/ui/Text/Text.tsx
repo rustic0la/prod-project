@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import cls from './Text.module.scss';
 
 export enum TextTheme {
@@ -12,13 +12,11 @@ interface TextProps {
   theme?: TextTheme;
 }
 
-export const Text: FC<TextProps> = ({
-  title,
-  text,
-  theme = TextTheme.PRIMARY,
-}) => (
-  <div className={cls[theme]}>
-    {title && <p className={cls.title}>{title}</p>}
-    {text && <p className={cls.text}>{text}</p>}
-  </div>
+export const Text: FC<TextProps> = memo(
+  ({ title, text, theme = TextTheme.PRIMARY }: TextProps) => (
+    <div className={cls[theme]}>
+      {title && <p className={cls.title}>{title}</p>}
+      {text && <p className={cls.text}>{text}</p>}
+    </div>
+  )
 );
