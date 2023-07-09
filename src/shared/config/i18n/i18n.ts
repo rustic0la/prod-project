@@ -12,7 +12,7 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-    debug: IS_DEV,
+    debug: __IS_DEV__,
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },

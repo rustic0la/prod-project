@@ -11,4 +11,5 @@ declare module '*.svg' {
 
 declare module '*.png';
 
-declare const IS_DEV: boolean;
+declare const __IS_DEV__: boolean;
+declare const __API__: string;

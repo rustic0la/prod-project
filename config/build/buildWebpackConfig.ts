@@ -18,7 +18,7 @@ export function buildWebpackConfig(
     },
     devtool: options.isDev ? 'inline-source-map' : undefined,
     devServer: options.isDev ? buildDevServer(options) : undefined,
-    plugins: buildPlugins(options.paths, options.isDev),
+    plugins: buildPlugins(options),
     module: {
       rules: buildLoaders(options),
     },
