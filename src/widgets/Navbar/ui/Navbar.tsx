@@ -1,4 +1,4 @@
-import { memo, useCallback, useState, type FC } from 'react';
+import { type FC, memo, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui';
@@ -32,7 +32,7 @@ export const Navbar: FC = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.navbar, {}, [className])}>
+      <div className={classNames(cls.navbar, {}, [className || ''])}>
         <Button
           theme={ButtonTheme.CLEAR}
           className={cls.links}
@@ -45,7 +45,7 @@ export const Navbar: FC = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
+    <div className={classNames(cls.navbar, {}, [className || ''])}>
       <Button
         theme={ButtonTheme.CLEAR}
         className={cls.links}

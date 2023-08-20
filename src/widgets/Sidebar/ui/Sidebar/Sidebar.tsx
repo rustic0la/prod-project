@@ -1,4 +1,4 @@
-import { type FC, useState, memo } from 'react';
+import { type FC, memo, useState } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames';
 import { Button, ButtonTheme } from 'shared/ui';
 import { ButtonSize } from 'shared/ui/Button/Button';
@@ -23,7 +23,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }: SidebarProps) => {
     <div
       data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
-        className,
+        className || '',
       ])}
     >
       <Button

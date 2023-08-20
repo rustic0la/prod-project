@@ -4,6 +4,7 @@ import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+  // @ts-ignore
   loginForm: loginReducer,
 };
 

@@ -1,4 +1,4 @@
-import { memo, type FC } from 'react';
+import { type FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/helpers/classNames';
 import { Button, ButtonTheme } from 'shared/ui';
@@ -20,7 +20,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
       <Button
         theme={ButtonTheme.CLEAR}
         onClick={toggle}
-        className={classNames('', {}, [className])}
+        className={classNames('', {}, [className || ''])}
       >
         {t(short ? 'Яз' : 'Язык')}
       </Button>

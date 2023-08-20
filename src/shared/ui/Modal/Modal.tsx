@@ -70,7 +70,7 @@ export const Modal = (props: ModalProps) => {
   }, [isOpen, onKeyDown]);
 
   const mods: Record<string, boolean> = {
-    [cls.opened]: isOpen,
+    [cls.opened]: isOpen || false,
     [cls.isClosing]: isClosing,
   };
 
@@ -81,9 +81,15 @@ export const Modal = (props: ModalProps) => {
   return (
     <Portal>
       <div
-        className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}
+        className={classNames(cls.Modal, mods, [
+          className || '',
+          theme,
+          'app_modal',
+        ])}
       >
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */}
         <div className={cls.overlay} onClick={closeHandler}>
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */}
           <div className={cls.content} onClick={onContentClick}>
             {children}
           </div>

@@ -22,7 +22,6 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
-  className?: string;
   onSuccess?: () => void;
 }
 
@@ -30,7 +29,7 @@ const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
@@ -63,7 +62,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
       })
     );
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess();
+      onSuccess?.();
     }
   }, [dispatch, onSuccess, password, username]);
 

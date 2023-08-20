@@ -3,7 +3,7 @@ import { getProfileError } from 'entities/Profile/model/selectors/getProfileErro
 import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Button, ButtonTheme, Text, Input } from 'shared/ui';
+import { Button, ButtonTheme, Input, Text } from 'shared/ui';
 import cls from './ProfileCad.module.scss';
 
 export const ProfileCard = () => {
@@ -15,6 +15,7 @@ export const ProfileCard = () => {
   return (
     <div className={cls.ProfileCard}>
       <div className={cls.header}>
+        {/*  @ts-ignore */}
         <Text title={t('Профиль')} />
         <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE}>
           {t('Редактировать')}

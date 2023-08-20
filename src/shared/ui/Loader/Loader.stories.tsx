@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import 'app/styles/index.scss';
 import { Theme } from 'app/providers/ThemeProvider';
@@ -20,13 +20,7 @@ export default {
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {
-  children: 'Text',
-};
 Light.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Dark = Template.bind({});
-Dark.args = {
-  children: 'Text',
-};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
