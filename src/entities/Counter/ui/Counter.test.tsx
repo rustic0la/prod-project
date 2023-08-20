@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { componentRender } from 'shared/lib/tests/componentRender/conponentRender';
-import { Counter } from './Counter';
 import { userEvent } from '@storybook/testing-library';
+import { Counter } from './Counter';
 
 describe('testing Counter', () => {
   test('with only parameter', () => {

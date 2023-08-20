@@ -11,5 +11,7 @@ declare module '*.svg' {
 
 declare module '*.png';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle
 declare const __IS_DEV__: boolean;
+// eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle
 declare const __API__: string;

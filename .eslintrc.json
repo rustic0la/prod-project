@@ -17,10 +17,13 @@
     "airbnb-typescript",
     "plugin:i18next/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest",
+    "tsconfigRootDir": ".",
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": [
+      "./tsconfig.json"
+    ]
   },
   "plugins": [
     "react",
@@ -30,6 +33,7 @@
     "react-hooks"
   ],
   "rules": {
+    "max-len": "off",
     "no-param-reassign": [
       2,
       {

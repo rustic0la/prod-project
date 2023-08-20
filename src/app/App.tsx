@@ -5,13 +5,11 @@ import { Suspense, useEffect } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
-import { useNavigate } from 'react-router-dom';
 import { AppRouter } from './providers/router';
 
 export const App = () => {
   const { theme } = useTheme();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
