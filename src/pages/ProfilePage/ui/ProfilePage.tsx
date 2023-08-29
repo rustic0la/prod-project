@@ -4,6 +4,7 @@ import {
   getProfileForm,
   getProfileIsLoading,
   getProfileReadonly,
+  getProfileValidateErrors,
   profileActions,
   ProfileCard,
   profileReducer,
@@ -18,6 +19,8 @@ import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -28,10 +31,14 @@ const ProfilePage = () => {
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
 
   useEffect(() => {
-    // @ts-ignore
-    dispatch(fetchProfileData());
+    if (__PROJECT__ === 'frontend') {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeFirstname = useCallback(
@@ -80,6 +87,10 @@ const ProfilePage = () => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div>
         <ProfilePageHeader />
+        {validateErrors?.length &&
+          validateErrors.map((err) => (
+            <Text key={err} theme={TextTheme.ERROR} text={err} />
+          ))}
         <ProfileCard
           data={data}
           isLoading={isLoading}
