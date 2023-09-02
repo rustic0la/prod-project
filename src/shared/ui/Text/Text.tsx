@@ -8,9 +8,14 @@ export enum TextTheme {
 }
 
 export enum TextAlign {
-  RIGHT = 'RIGHT',
-  LEFT = 'LEFT',
-  CENTER = 'CENTER',
+  RIGHT = 'right',
+  LEFT = 'left',
+  CENTER = 'center',
+}
+
+export enum TextSize {
+  M = 'size_m',
+  L = 'size_l',
 }
 
 interface TextProps {
@@ -18,6 +23,7 @@ interface TextProps {
   text?: string;
   theme?: TextTheme;
   align?: TextAlign;
+  size?: TextSize;
   className?: string;
 }
 
@@ -27,15 +33,17 @@ export const Text: FC<TextProps> = memo(
     text,
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
+    size = TextSize.M,
     className,
   }: TextProps) => {
     const mods: Mods = {
       [cls[theme]]: true,
       [cls[align]]: true,
+      [cls[size]]: true,
     };
 
     return (
-      <div className={classNames('', mods, [className || ''])}>
+      <div className={classNames(cls.Text, mods, [className || ''])}>
         {title && <p className={cls.title}>{title}</p>}
         {text && <p className={cls.text}>{text}</p>}
       </div>

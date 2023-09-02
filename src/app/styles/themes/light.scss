@@ -1,8 +1,15 @@
 :root {
   --bg-color: #a8a8a8;
-  --inverted-bg-color: #090949;
-  --primary-color: #0800ff;
-  --secondary-color: #0856ff;
-  --inverted-primary-color: #049604;
-  --inverted-secondary-color: #04ff04;
+  --inverted-bg-color: #247B7B;
+  --primary-color: #0D5C63;
+  --secondary-color: #44A1A0;
+  --inverted-primary-color: #78CDD7;
+  --inverted-secondary-color: #FFFFFA;
+
+  // skeleton
+  --skeleton-color: #c7c7c7;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
+
+  // code
+  --code-bg: #fff;
 }
